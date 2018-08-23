@@ -57,8 +57,8 @@ export default class JSendResponseBuilder {
     public success<T>(data: T): IJSendSuccessResponse<T> {
         return {
             data,
-            status: 'success'
-        }
+            status: 'success',
+        };
     }
 
     /**
@@ -68,8 +68,8 @@ export default class JSendResponseBuilder {
     public fail<T>(data: T): IJSendFailResponse<T> {
         return {
             data,
-            status: 'fail'
-        }
+            status: 'fail',
+        };
     }
 
     /**
@@ -80,8 +80,8 @@ export default class JSendResponseBuilder {
      */
     public error<T = null>(message: string, code?: number, data?: T): IJSendErrorResponse<T> {
         const result: IJSendErrorResponse<T> = {
-            message, 
-            status: 'error'
+            message,
+            status: 'error',
         };
 
         if (code) {
@@ -93,5 +93,5 @@ export default class JSendResponseBuilder {
         }
 
         return result;
-    }   
+    }
 }

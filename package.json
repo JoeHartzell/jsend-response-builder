@@ -1,9 +1,10 @@
 {
   "name": "jsend-response-builder",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A simple typescript library for constructing jsend response objects",
   "main": "dist/index.js",
   "scripts": {
+    "lint": "node node_modules/tslint/bin/tslint --project . -c tslint.yml",
     "test": "mocha -r ts-node/register tests/**/*.ts",
     "build": "node node_modules/rimraf/bin.js dist/* && node node_modules/typescript/bin/tsc"
   },
