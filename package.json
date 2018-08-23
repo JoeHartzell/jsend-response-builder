@@ -1,0 +1,33 @@
+{
+  "name": "jsend-response-builder",
+  "version": "1.0.0",
+  "description": "A simple typescript library for constructing jsend response objects",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "mocha -r ts-node/register tests/**/*.ts",
+    "build": "node node_modules/rimraf/bin.js dist/* && node node_modules/typescript/bin/tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoeHartzell/jsend-response-builder.git"
+  },
+  "keywords": [
+    "jsend",
+    "typescript",
+    "builder"
+  ],
+  "author": "Joe Hartzell",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JoeHartzell/jsend-response-builder/issues"
+  },
+  "homepage": "https://github.com/JoeHartzell/jsend-response-builder#readme",
+  "devDependencies": {
+    "@types/chai": "^4.1.4",
+    "@types/mocha": "^5.2.5",
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0"
+  }
+}
