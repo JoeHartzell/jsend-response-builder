@@ -1,8 +1,20 @@
 # About
 
 A simple typescript library for creating JSend responses. Supports making "Success", "Error" and "Fail" responses. 
+# Usage
 
-# Example 
+The project is very simple to start using. You simply create an instance of the JSendResponseBuilder then start using the methods. The builder supports several options to customize the builder
+
+### Options 
+
+The options are currently a WIP but currently there are 2 available options.
+
+| Option | Values                    | Description                                                                     |
+|--------|---------------------------|---------------------------------------------------------------------------------|
+| *case* | 'kebab', 'camel', 'snake' | By setting this, it controls what case type the object keys in the response are |
+| *deep* | true, false               | By setting this, it controls if nested objects in the reponse get normalized    |
+
+### Example 
 ```ts
 const data = {
     firstName: 'Joe',
