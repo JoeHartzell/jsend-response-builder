@@ -9,3 +9,4 @@ rules:
   comment-format: [true, 'check-space', 'check-lowercase']
   max-classes-per-file: false
   no-string-literal: false
+  variable-name: [true, "ban-keywords", "check-format", "allow-leading-underscore"]
