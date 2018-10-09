@@ -1,3 +1,4 @@
+/* tslint:disable */
 import { describe } from 'mocha';
 import * as chai from 'chai';
 import JSendResponseBuilder from '../lib';
@@ -119,6 +120,25 @@ describe('JSendResponseBuilder', () => {
         })
 
         describe('deep', () => {
+            it('should handle 0s as a value', () => {
+                const jsend = new JSendResponseBuilder({ case: 'camel', deep: true });
+                const data = {
+                    'first-name': 'Joe',
+                    'last-name': 'Hartzell',
+                    address: {
+                        'line-1': '1234 state road lucky',
+                        'zip-code': 0
+                    }
+                };  
+                const response = jsend.success(data);
+    
+                expect(response.status).to.eq('success');
+                expect(response.data).to.have.property('firstName').and.eq('Joe');
+                expect(response.data).to.have.property('lastName').and.eq('Hartzell');
+                expect(response.data.address).to.have.property('line1').and.eq('1234 state road lucky');
+                expect(response.data.address).to.have.property('zipCode').and.eq(0);
+            })
+
             it('should normalize nested keys', () => {
                 const jsend = new JSendResponseBuilder({ case: 'camel', deep: true });
                 const data = {
