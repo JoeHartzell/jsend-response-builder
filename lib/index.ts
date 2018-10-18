@@ -50,6 +50,10 @@ export interface IJSendResponseBuilderOptions {
      * this sets if we should deep normalize the response data or not
      */
     deep?: boolean;
+    /**
+     * a namespace character used for separating a namespace from its key
+     */
+    namespaceKey?: string;
 }
 
 /**
@@ -63,6 +67,7 @@ export default class JSendResponseBuilder {
         // set the normalizer options
         this.normalizer.options.case = option.case;
         this.normalizer.options.deep = option.deep;
+        this.normalizer.options.namespaceKey = option.namespaceKey;
         this._options = option;
     }
 

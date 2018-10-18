@@ -119,6 +119,27 @@ describe('JSendResponseBuilder', () => {
             })
         })
 
+        describe('namespaceKey', () => {
+            it('should handle namespaced keys', () => {
+                const jsend = new JSendResponseBuilder({ case: 'snake', deep: true, namespaceKey: '::'});
+                const data = {
+                    firstName: 'Joe',
+                    lastName: 'Hartzell',
+                    'person::address-1': {
+                        'line-1': '1234 state road lucky',
+                        'zip-code': 0
+                    }
+                }
+
+                const response = jsend.success(data);
+
+                expect(response.status).to.eq('success');
+                expect(response.data).to.have.property('first_name').and.eq('Joe');
+                expect(response.data).to.have.property('last_name').and.eq('Hartzell');
+                expect(response.data).to.have.property('person::address_1');
+            })
+        })
+
         describe('deep', () => {
             it('should handle 0s as a value', () => {
                 const jsend = new JSendResponseBuilder({ case: 'camel', deep: true });
