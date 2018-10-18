@@ -13,6 +13,7 @@ The options are currently a WIP but currently there are 2 available options.
 |--------|---------------------------|---------------------------------------------------------------------------------|
 | *case* | 'kebab', 'camel', 'snake' | By setting this, it controls what case type the object keys in the response are |
 | *deep* | true, false               | By setting this, it controls if nested objects in the reponse get normalized    |
+| *namespaceKey | string             | By setting this, it prevents the case type from rewriting the characters that separate a namespace from its key |
 
 ### Example 
 ```ts
